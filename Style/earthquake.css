@@ -25,7 +25,7 @@
     height: 53.44%;
     padding: 1rem;
     border-radius: 4px;
-    background: #FFF;
+    background: #1D304E;
     box-shadow: 0px 4px 4px 0px rgba(134, 134, 134, 0.25);
 }
 
@@ -41,7 +41,7 @@
 }
 
 .earthquake_section2 .top_box1_text1 {
-    color: #0A0A0A;
+    color: #fff;
     font-size: clamp(1rem, 0rem + 1.25vw, 3rem);
         font-style: normal;
     font-weight: 600;
@@ -50,7 +50,7 @@
 }
 
 .earthquake_section2 .top_box2_text1 {
-    color: #858585;
+    color: #D2D2D2;
     font-size: clamp(0.0683125rem, 0rem + 1.0938vw, 6.8359375rem);
     font-style: normal;
     font-weight: 400;
@@ -65,12 +65,12 @@
     height: 39.65%;
     padding: 1rem;
     border-radius: 4px;
-    background: #FFF;
+    background: #1D304E;
     box-shadow: 0px 4px 4px 0px rgba(134, 134, 134, 0.25);
 }
 
 .earthquake_section2 .bottom_box_text1 {
-    color: #000;
+    color: #fff;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -117,7 +117,7 @@
 
 
 .earthquake_section2 .bottom_box_text2 {
-    color: #0A0A0A;
+    color: #fff;
     font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
     font-style: normal;
     font-weight: 400;

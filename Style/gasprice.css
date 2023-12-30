@@ -248,6 +248,7 @@ input::placeholder {
 }
 .bottom_box_row4 {
   display: flex;
+  gap: 0.5rem;
 }
 .bottom_box_row4_text {
   color: #cecece;
@@ -462,6 +463,50 @@ input::placeholder {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.QR-card {
+  width: 16%;
+  height: 27.5%;
+  position: absolute;
+  z-index: 401;
+  right: 3%;
+  bottom: 10%;
+  background: #1d304e;
+  padding: 1rem;
+  gap: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+.QR-card .QR-header1 {
+  color: #fff;
+  text-align: center;
+  font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.QR-container1{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.QR-card .QR-header2 {
+    display: flex;
+    justify-content: center;
+  color: #d3d3d3;
+  font-size: clamp(0.0683125rem, 0rem + 1.0938vw, 6.8359375rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.QR-container2{
+    display: flex;
+    justify-content: center;
+}
+.QR-img{
+    width: 47%;
+    height: 48%;
 }
 
 .footer {
