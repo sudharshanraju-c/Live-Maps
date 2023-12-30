@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- All maps css -->
+    <link rel="stylesheet" href="./Style/crime.css">
+    <link rel="stylesheet" href="./Style/earthquake.css">
+    <link rel="stylesheet" href="./Style/events.css">
+    <link rel="stylesheet" href="./Style/gasprice.css">
+    <link rel="stylesheet" href="./Style/unemployment.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- leaflet related imports -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+    <!-- Leaflet Control Search CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-search/dist/leaflet.control.search.min.css" />
+    <script src="https://unpkg.com/leaflet-control-search/dist/leaflet.control.search.min.js"></script>
+
+    <!-- Add click event -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find the section with the id "section2"
+            var section2 = document.getElementById('gas_price_section2');
+
+            // Find the section with the id "section_navigate"
+            var sectionNavigate = document.getElementById('gas_price_section_navigate');
+
+            // Add a click event listener to the section
+            section2.addEventListener('click', function () {
+                // Toggle the "active" class to trigger the visibility
+                sectionNavigate.classList.toggle('active');
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="main" id="map">
+        <div class="main_div">
+            <div class="navbar" id="navbar">
+                <div class="left_nav">
+                    <div class="nav_col1">
+                        <div class="img_conatainer">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/5b8d59f1-7d14-47f5-93da-36ba82539bc8_$$Layer_18.png"
+                                alt="logo">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/5e36d75e-c0e5-4cad-b53a-2cce20a71ad6_$$Group%20485449.png"
+                                alt="logoText">
+                        </div>
+                    </div>
+                    <div class="nav_col2">
+                        <div class="search_bar" id="searchInput">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/1bdc298b-3010-4ef8-978c-faec2ff1760e_$$Magnifying%20Glass.svg"
+                                alt="search">
+                            <input type="text" class="input_text" placeholder="Search city, street, zip code  ">
+                        </div>
+                    </div>
+                    <div class="nav_col3" id="button_box">
+
+                    </div>
+                </div>
+                <div class="right_nav">
+                    <div class="right_nav_text">
+                        +2
+                    </div>
+                </div>
+            </div>
+
+            <div class="user_image" id="user_image">
+                <!-- <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/dc286c40-bd83-4ceb-9f78-8afe9b8aedd9_$$Ellipse%201218.svg" alt="user"> -->
+            </div>
+
+            <div class="gas_price_section2" id="gas_price_section2">
+                <div class="bottom_box">
+                    <div class="bottom_box_row1">
+                        <div class="bottom_box_row1_text1">
+                            Esso
+                        </div>
+                        <div class="bottom_box_row1_col2">
+                            <div class="bottom_box_row1_text2">
+                                4.5
+                            </div>
+                            <div class="bottom_box_row1_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/c0a8bcc0-06fe-497d-b428-6a738946a9c9_$$Rating%20Star.png"
+                                    alt="">
+                            </div>
+                            <div class="bottom_box_row1_text3">
+                                (110)
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="line">
+
+                    </div>
+                    <div class="bottom_box_row2">
+                        <div class="bottom_box_row2_text">
+                            2317, L St
+                        </div>
+                        <div class="bottom_box_row2_text">
+                            Bakersfield, CA - 93301
+                        </div>
+                    </div>
+                    <div class="bottom_box_row3">
+                        <div class="bottom_box_row3_text">
+                            Open 24 hours
+                        </div>
+                        <div class="bottom_box_row3_text">
+                            1 (650) 964-0213
+                        </div>
+                    </div>
+                    <div class="bottom_box_row4">
+                        <div class="bottom_box_row4_text">
+                            Cash only
+                        </div>
+                    </div>
+                    <div class="bottom_box_row5">
+                        <div class="bottom_box_row5_col1">
+                            <div class="bottom_box_row5_text">
+                                Diesel
+                            </div>
+                            <div class="bottom_box_row5_text">
+                                $2.25
+                            </div>
+                        </div>
+                        <div class="bottom_box_row5_col2">
+                            <div class="bottom_box_row5_text">
+                                Midgrade
+                            </div>
+                            <div class="bottom_box_row5_text">
+                                $2.25
+                            </div>
+                        </div>
+                        <div class="bottom_box_row5_col3">
+                            <div class="bottom_box_row5_text">
+                                Premium
+                            </div>
+                            <div class="bottom_box_row5_text">
+                                $2.25
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="gas_price_section_navigate" id="gas_price_section_navigate">
+                <div class="bottom_box navigate_top">
+                  <div class="bottom_box_row1">
+                    <div class="bottom_box_row1_text1">Esso</div>
+                    <div class="bottom_box_row1_col2">
+                      <div class="bottom_box_row1_text2">4.5</div>
+                      <div class="bottom_box_row1_img">
+                        <img
+                          src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/c0a8bcc0-06fe-497d-b428-6a738946a9c9_$$Rating%20Star.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="bottom_box_row1_text3">(110)</div>
+                    </div>
+                  </div>
+                  <div class="line"></div>
+      
+                  <div class="bottom_box_row2">
+                    <div class="bottom_box_row2_text">2317, L St</div>
+                    <div class="bottom_box_row2_text">Bakersfield, CA - 93301</div>
+                  </div>
+                  <div class="bottom_box_row3">
+                    <div class="bottom_box_row3_text">Open 24 hours</div>
+                    <div class="bottom_box_row3_text">1 (650) 964-0213</div>
+                  </div>
+                  <div class="bottom_box_row4">
+                      <div><img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/99039b64-e862-4c90-930e-3671da4707a4_$$Check.svg" alt=""></div>
+                    <div class="bottom_box_row4_text">Cash</div>
+                  </div>
+                  <div class="bottom_box_row5">
+                    <div class="bottom_box_row5_col1">
+                      <div class="bottom_box_row5_text">Diesel</div>
+                      <div class="bottom_box_row5_text">$2.25</div>
+                    </div>
+                    <div class="bottom_box_row5_col2">
+                      <div class="bottom_box_row5_text">Midgrade</div>
+                      <div class="bottom_box_row5_text">$2.25</div>
+                    </div>
+                    <div class="bottom_box_row5_col3">
+                      <div class="bottom_box_row5_text">Premium</div>
+                      <div class="bottom_box_row5_text">$2.25</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="navigate_icon">
+                  <div class="direction icon_box">
+                    <div class="icon_overlap">
+                      <div class="icon_base">
+                        <img
+                          src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/a8988fc3-25d2-4700-80ef-43336fa491ce_$$Ellipse%202714.svg"
+                          alt="base"
+                        />
+                      </div>
+                    </div>
+                    <div class="icon_text">Directions</div>
+                  </div>
+                  <div class="send_to_phone icon_box">
+                    <div class="icon_overlap">
+                      <div class="icon_base">
+                        <img
+                          src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/a4157716-5b18-4473-a5b6-e8c08b907626_$$Frame%201000003959.png"
+                          alt="base"
+                        />
+                      </div>
+                    </div>
+                    <div class="icon_text">Send to phone</div>
+                  </div>
+                  <div class="nearBy icon_box">
+                    <div class="icon_overlap">
+                      <div class="icon_base">
+                        <img
+                          src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/c26c544f-42de-4ca7-b029-0c3ca58a0f9a_$$Frame%201000003958.png"
+                          alt="base"
+                        />
+                      </div>
+                    </div>
+                    <div class="icon_text">Near by</div>
+                  </div>
+                </div>
+                <div class="middle_text">Other gas stations nearby</div>
+                <div class="bottom_container">
+                  <div class="bottom_text_container">
+                    <div class="bottom_box_row1">
+                      <div class="bottom_box_row1_header">ARCO</div>
+                      <div class="bottom_box_row1_col2">
+                        <div class="bottom_box_row1_text2">4.5</div>
+                        <div class="bottom_box_row1_img">
+                          <img
+                            src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/c0a8bcc0-06fe-497d-b428-6a738946a9c9_$$Rating%20Star.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="bottom_box_row1_text3">(110)</div>
+                      </div>
+                    </div>
+                    <div class="bottom_box_row2">
+                      <div class="bottom_box_row2_text">2317, L St</div>
+                      <div class="bottom_box_row2_text">Bakersfield, CA - 93301</div>
+                    </div>
+                    <div class="bottom_box_row3">
+                      <div class="bottom_box_row3_text">Open 24 hours</div>
+                      <div class="bottom_box_row3_text">1 (650) 964-0213</div>
+                    </div>
+                  </div>
+                  <div class="line1"></div>
+                  <div class="bottom_text_container">
+                    <div class="bottom_box_row1">
+                      <div class="bottom_box_row1_header">Chevron</div>
+                      <div class="bottom_box_row1_col2">
+                        <div class="bottom_box_row1_text2">4.5</div>
+                        <div class="bottom_box_row1_img">
+                          <img
+                            src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/c0a8bcc0-06fe-497d-b428-6a738946a9c9_$$Rating%20Star.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="bottom_box_row1_text3">(110)</div>
+                      </div>
+                    </div>
+                    <div class="bottom_box_row2">
+                      <div class="bottom_box_row2_text">2317, L St</div>
+                      <div class="bottom_box_row2_text">Bakersfield, CA - 93301</div>
+                    </div>
+                    <div class="bottom_box_row3">
+                      <div class="bottom_box_row3_text">Open 24 hours</div>
+                      <div class="bottom_box_row3_text">1 (650) 964-0213</div>
+                    </div>
+                  </div>
+                  <div class="line1"></div>
+                  <div class="bottom_text_container">
+                    <div class="bottom_box_row1">
+                      <div class="bottom_box_row1_header">VARSITY</div>
+                      <div class="bottom_box_row1_col2">
+                        <div class="bottom_box_row1_text2">4.5</div>
+                        <div class="bottom_box_row1_img">
+                          <img
+                            src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/c0a8bcc0-06fe-497d-b428-6a738946a9c9_$$Rating%20Star.png"
+                            alt=""
+                          />
+                        </div>
+                        <div class="bottom_box_row1_text3">(110)</div>
+                      </div>
+                    </div>
+                    <div class="bottom_box_row2">
+                      <div class="bottom_box_row2_text">2317, L St</div>
+                      <div class="bottom_box_row2_text">Bakersfield, CA - 93301</div>
+                    </div>
+                    <div class="bottom_box_row3">
+                      <div class="bottom_box_row3_text">Open 24 hours</div>
+                      <div class="bottom_box_row3_text">1 (650) 964-0213</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="gas_price_section_3" id="gas_price_section_3">
+                <div class="section_3_row1">
+                    <div class="section_3_row1_text">
+                        WHAT WILL YOU SPEND YOUR GAS MONEY ON NOW?
+
+                    </div>
+                </div>
+                <div class="section_3_row2">
+                    <div class="section_3_row2_col1">
+                        <div class="section_3_row2_col1_text">
+                            electricBIKES
+                        </div>
+                        <div class="section_3_row2_col1_img">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/b5856236-8946-4f2e-855f-62999c2020ea_$$image%2080.png"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="section_3_row2_col2">
+                        <div class="section_3_row2_col2_text">
+                            Test rides at selected stores
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crime_section2" id="crime_section2">
+                <div class="top_box">
+                    <div class="top_box1">
+                        <div class="top_box1_row1">
+                            <div class="top_box1_row1_col1">
+                                <div class="top_box1_row1_col1_img">
+                                    <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/1ed61890-d6d3-4aca-888b-164a30e10f80_$$Ellipse%202486.png"
+                                        alt="">
+                                </div>
+                                <div class="top_box1_row1_col1_text">
+                                    Robbery
+                                </div>
+
+                            </div>
+                            <div class="top_box2_col2">
+                                <div class="top_box2_col2_text">
+                                    Nov 26, 2023
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top_box1_row2">
+                            <div class="top_box1_row2_text1">
+                                #230124921
+                            </div>
+                            <div class="top_box1_row2_text2">
+                                8:00PM
+                            </div>
+
+                        </div>
+                        <div class="line">
+
+                        </div>
+                    </div>
+                    <div class="top_box2">
+                        <div class="top_box2_text1">
+                            Robbery $950.01 & over
+                        </div>
+                        <div class="top_box2_row2">
+                            <div class="top_box2_row2_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/a3c4ae74-28ae-4076-a1d1-04fa821dfb06_$$Maps%20Your%20Location%20Pin%20(1).png"
+                                    alt="">
+                            </div>
+                            <div class="top_box2_text2">
+                                800 Block S, CA
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="bottom_box">
+                    <div class="bottom_box_row1">
+                        <div class="bottom_box_row1_text1">
+                            Legend
+                        </div>
+                    </div>
+                    <div class="line">
+                    </div>
+                    <div class="bottom_box_row2">
+                        <div class="bottom_box_row2_img">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/d6e5d44c-4a29-408b-ae05-1cc04811204c_$$Rectangle%2034626056%20(1).png"
+                                alt="">
+                        </div>
+                        <div class="bottom_box_row2_text">
+                            Officers involved in shooting
+                        </div>
+
+                    </div>
+                    <div class="bottom_box_row2">
+                        <div class="bottom_box_row2_img">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/1ed61890-d6d3-4aca-888b-164a30e10f80_$$Ellipse%202486.png"
+                                alt="">
+                        </div>
+                        <div class="bottom_box_row2_text">
+                            Robbery
+                        </div>
+
+                    </div>
+                    <div class="bottom_box_row2">
+                        <div class="bottom_box_row2_img">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/8353d5fe-6265-4982-a9b6-7ba8841ab0fb_$$Rectangle%2034626056.png"
+                                alt="">
+                        </div>
+                        <div class="bottom_box_row2_text">
+                            VUFA Arrests
+                        </div>
+
+                    </div>
+                    <div class="bottom_box_row2">
+                        <div class="bottom_box_row2_img">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/fe35923d-ec1f-4729-9388-62bb19995a1b_$$Polygon%2011.png"
+                                alt="">
+                        </div>
+                        <div class="bottom_box_row2_text">
+                            Agg Assaults
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="earthquake_section2" id="earthquake_section2">
+                <div class="top_box">
+                    <div class="top_box1">
+                        <div class="top_box1_img">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/f57e4cdb-2426-4c02-9682-49ebb3ca93ce_$$Ellipse%202686.png"
+                                alt="">
+                        </div>
+                        <div class="top_box1_text1">
+                            M3.5 - 12KM SE of Bodfish, CA
+                        </div>
+                    </div>
+                    <div class="top_box2_text1">
+                        Nov 27, 2023
+                    </div>
+                    <div class="top_box2_text1">
+                        35.524° N 118.383° W
+                    </div>
+                    <div class="top_box2_text1">
+                        Depth (km) - 4.4
+                    </div>
+                    <div class="top_box2_text1">
+                        Count - 16, 756
+                    </div>
+                </div>
+                <div class="bottom_box">
+                    <div class="bottom_box_text1">
+                        Earthquakes
+                    </div>
+                    <div class="line">
+
+                    </div>
+                    <div class="bottom_box_lower_row">
+                        <div class="bottom_box_lower_row_child">
+                            <div class="bottom_box_lower_row_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/f57e4cdb-2426-4c02-9682-49ebb3ca93ce_$$Ellipse%202686.png"
+                                    alt="">
+                            </div>
+                            <div class="bottom_box_text2">
+                                Past Hour
+                            </div>
+                        </div>
+                        <div class="bottom_box_lower_row_child2">
+                            <div class="bottom_box_lower_row_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/ddeb08f3-2936-4fff-9e89-94773714d9e8_$$Ellipse%202633.png"
+                                    alt="">
+                            </div>
+                            <div class="bottom_box_text2">
+                                Past Day
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom_box_lower_row">
+                        <div class="bottom_box_lower_row_child">
+                            <div class="bottom_box_lower_row_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/183a57f6-24a0-4f5d-a85e-58879610b56a_$$Ellipse%202633%20(1).png"
+                                    alt="">
+                            </div>
+                            <div class="bottom_box_text2">
+                                Past Week
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="events_section2" id="events_section2">
+                <div class="section2_inner_box">
+                    <div class="left_box">
+                        <div class="left_box_row1">
+                            <div class="left_box_row1_main_img">
+                                <div class="left_box_row1_img1">
+                                    <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/5983f5cd-d3ca-44f3-bd69-7103ace9ec97_$$Ellipse%202682.png"
+                                        alt="">
+                                </div>
+                                <div class="left_box_row1_img2">
+                                    <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/0fce5164-5043-4459-8ade-200f4694dc2e_$$Pornography.png"
+                                        alt="">
+                                </div>
+                            </div>
+                            <div class="left_box_row1_text text_margin">
+                                Atomic Saloon Show
+                            </div>
+                        </div>
+                        <div class="left_box_row2">
+                            <div class="left_box_row2_text">
+                                Price: $99 onwards
+                            </div>
+                        </div>
+                        <div class="left_box_row3">
+                            <div class="left_box_row3_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/d0440c2a-d0e4-4ba1-b55a-705ecd14e225_$$Phone.png"
+                                    alt="">
+                            </div>
+                            <div class="left_box_row3_text ">
+                                (702) 414-1000
+                            </div>
+                        </div>
+                        <div class="left_box_row4">
+                            <div class="left_box_row3_text">
+                                All days, 7:30-9:30PM
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right_box">
+                        <div class="right_box_col1">
+                            <div class="right_box_col1_dognut">
+                                <!-- <div class="right_box_col1_img">
+                                    
+                                </div> -->
+                                <div class="progress-bar" id="progress-bar">
+                                    <!-- Hidden progress element for accessibility -->
+                                    <progress value="90" min="0" max="100"
+                                        style="visibility:hidden;height:0;width:0;"></progress>
+                                    <!-- Text to display the progress value -->
+                                    <span class="progressBar_text" id="progressValue"></span>
+                                </div>
+                            </div>
+                            <div class="right_box_col1_text">
+                                seats available
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="events_section2_compass" id="events_section2_compass">
+                <div class="compass_top_box">
+                    <div class="compass_top_box_img">
+                        <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/11f7589e-0309-44b7-a97e-d78fe17984c9_$$Compass%20icon%20(1).%202%202.png"
+                            alt="">
+                    </div>
+                </div>
+                <div class="compass_bottom_box">
+                    <div class="compass_bottom_box_text_container">
+                        <div class="compass_bottom_box_text_container_text">0</div>
+                        <div class="compass_bottom_box_text_container_text">250</div>
+                        <div class="compass_bottom_box_text_container_text">600</div>
+                    </div>
+                    <div class="compass_bottom_box_line">
+                    </div>
+                </div>
+            </div>
+
+            <div class="unemployment_section1" id="unemployment_section1">
+                <div class="section1_image">
+                    <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/8fc2c764-feac-4183-8af8-58dd480b74e9_$$image%2063.png"
+                        alt="">
+                </div>
+                <div class="section1_text_box">
+                    <div class="section1_text1">Opportunities for all! Join us</div>
+                    <div class="section1_text2">ABC, NYC</div>
+                </div>
+            </div>
+            <div class="unemployment_section2" id="unemployment_section2">
+                <div class="top_box">
+                    <div class="top_box1">
+                        <div class="circle_img">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/f57e4cdb-2426-4c02-9682-49ebb3ca93ce_$$Ellipse%202686.png"
+                                alt="">
+                        </div>
+                        <div class="top_box1_text1">
+                            28%
+                        </div>
+                    </div>
+                    <div class="top_box2">
+                        <div class="top_box2_text1">
+                            800 Block S, CA
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom_box">
+                    <div class="bottom_box_text1">
+                        Unemployment
+                    </div>
+                    <div class="line">
+
+                    </div>
+                    <div class="bottom_box_lower_row">
+                        <div class="bottom_box_lower_row_child">
+                            <div class="circle_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/f57e4cdb-2426-4c02-9682-49ebb3ca93ce_$$Ellipse%202686.png"
+                                    alt="">
+                            </div>
+                            <div class="bottom_box_text2">
+                                25% or higher
+                            </div>
+                        </div>
+                        <div class="bottom_box_lower_row_child2">
+                            <div class="circle_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/ddeb08f3-2936-4fff-9e89-94773714d9e8_$$Ellipse%202633.png"
+                                    alt="">
+                            </div>
+                            <div class="bottom_box_text2">
+                                20% - 25%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom_box_lower_row">
+                        <div class="bottom_box_lower_row_child">
+                            <div class="circle_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/183a57f6-24a0-4f5d-a85e-58879610b56a_$$Ellipse%202633%20(1).png"
+                                    alt="">
+                            </div>
+                            <div class="bottom_box_text2">
+                                15% - 20%
+                            </div>
+                        </div>
+                        <div class="bottom_box_lower_row_child3">
+                            <div class="circle_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/1338522c-5cfd-4f7f-990a-613bae55fad2_$$Ellipse%202633%20(3).png"
+                                    alt="">
+                            </div>
+                            <div class="bottom_box_text2">
+                                10%-15%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom_box_lower_row">
+                        <div class="bottom_box_lower_row_child">
+                            <div class="circle_img">
+                                <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/1338522c-5cfd-4f7f-990a-613bae55fad2_$$Ellipse%202633%20(3).png"
+                                    alt="">
+
+                            </div>
+                            <div class="bottom_box_text2">
+                                Under 10%
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer" id="footer">
+                <div class="top_footer">
+                    <div class="top_footer_img">
+                        <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/d32d5ef3-a80a-41df-88e3-0caaea7f688d_$$Nexus%202%20(1).png"
+                            alt="">
+                    </div>
+                    <div class="top_footer_text">
+                        MAKING COMMUNITIES SMARTER
+                    </div>
+                    <div class="top_footer_img2">
+                        <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/6b22286c-5d27-45a7-9fee-11559c8d8765_$$image%2086%20(1).png"
+                            alt="">
+                    </div>
+                </div>
+                <div class="bottem_footer">
+
+                </div>
+                <div class="footer_text_row">
+                    <div class="footer_text_row_text">
+                        Last Updated 2:58 PM
+                    </div>
+                    <div class="footer_text_row_col1">
+                        <div class="footer_text_row_col2_img">
+                            <img src="https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/4f6de45e-0cce-49d6-9b7e-39bc68bf049e_$$location%20(1)%201%20(2).png"
+                                alt="">
+                        </div>
+                        <div class="footer_text_row_text2">
+                            Bakersfield, CA
+                        </div>
+                    </div>
+                    <div class="footer_text_row_col2">
+                        <div id="footer_date1" class="footer_text_row_text">
+                            Nov 27, 2023
+                        </div>
+                        <div id="current-time1" class="footer_text_row_text">
+                            <!-- 3:00 PM -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adding all js file -->
+    <script src="./Script/mapIntegration.js"></script>
+    <script src="./Script/index.js"></script>
+    <script src="./Script/htmlContent.js"></script>
+    <script src="./Script/buttonEvent.js"></script>
+
+</body>
+
+</html>

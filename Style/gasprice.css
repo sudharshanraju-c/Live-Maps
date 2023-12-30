@@ -1,0 +1,588 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.main_div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.navbar {
+  width: 83.516%;
+  height: 7.223%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 3.334%;
+  left: 1.88%;
+  gap: 1rem;
+  z-index: 401;
+}
+
+.left_nav {
+  width: 96.633%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.left_nav .nav_col1 {
+  width: 5.034%;
+  height: 100%;
+  padding: 0px 4.383px 0px 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_conatainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.nav_col1 .img {
+  width: 100%;
+  height: 100%;
+}
+
+.left_nav .nav_col2 {
+  width: 27.3%;
+  height: 76.924%;
+  display: flex;
+  align-items: center;
+  border-radius: 0.25rem;
+  background: #1d304e;
+}
+
+.search_bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  gap: 1rem;
+}
+
+.input_text {
+  width: 100%;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: clamp(0.0585625rem, 0rem + 0.9375vw, 5.859375rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+input::placeholder {
+  color: white;
+}
+
+.left_nav .nav_col3 {
+  width: 63.021%;
+  height: 65.385%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  /* gap: 0.8rem; */
+  flex-wrap: wrap;
+}
+
+.right_nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right_nav_text {
+  color: #fff;
+  font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.user_image {
+  width: 4.063%;
+  height: 7.223%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 3.334%;
+  right: 1.88%;
+  z-index: 401;
+  border-radius: 50%;
+  border: 1px solid #888;
+  background: url("https://cdn.gaiansolutions.com/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/618b6fdef5dacc0001a6b1b0/dc286c40-bd83-4ceb-9f78-8afe9b8aedd9_$$Ellipse%201218.svg"),
+    lightgray;
+  background-size: cover;
+  /* Adjusted background size to 'cover' */
+  background-position: 0px -2px;
+  background-repeat: no-repeat;
+}
+
+.gas_price_section2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 401;
+  width: 21.02%;
+  height: 25%;
+  bottom: 10%;
+  margin-left: 1.88%;
+  cursor: pointer;
+  transition: transform 300ms ease-out;
+  /* Define the transition for the smart animate effect */
+}
+
+/* Add a class for the TV state (this class will trigger the animation) */
+/* .gas_price_section2.section_navigate {
+    transform: scale(2);
+} */
+
+.line {
+  z-index: 401;
+  width: 100%;
+  height: 0.5px;
+  background: #9f9f9f;
+}
+
+.bottom_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  padding: 5.5%;
+  border-radius: 4px;
+  border: 1px solid #647ea8;
+  background: #1d304e;
+}
+
+.bottom_box_row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bottom_box_row1_text1 {
+  color: #fff;
+  font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.bottom_box_row1_col2 {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  width: 30%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom_box_row1_img {
+  display: flex;
+  align-items: center;
+}
+
+.bottom_box_row1_text2 {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: clamp(0.0585625rem, 0rem + 0.9375vw, 5.859375rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.bottom_box_row1_text3 {
+  color: #a3a3a3;
+  font-size: clamp(0.0585625rem, 0rem + 0.9375vw, 5.859375rem);
+  font-style: normal;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.bottom_box_row2_text {
+  color: #cecece;
+  font-size: clamp(0.0585625rem, 0rem + 0.9375vw, 5.859375rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.bottom_box_row3 {
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom_box_row3_text {
+  color: #cecece;
+  font-size: clamp(0.0585625rem, 0rem + 0.9375vw, 5.859375rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.bottom_box_row4 {
+  display: flex;
+}
+.bottom_box_row4_text {
+  color: #cecece;
+  font-size: clamp(0.0683125rem, 0rem + 1.0938vw, 6.8359375rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.bottom_box_row5 {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.bottom_box_row5_col1 {
+  display: flex;
+  flex-direction: row;
+  border-radius: 2px;
+  background: #ca6eca;
+  padding: 4px;
+  gap: 10px;
+}
+
+.bottom_box_row5_col2 {
+  display: flex;
+  flex-direction: row;
+  border-radius: 2px;
+  background: #2e57ba;
+  padding: 4px;
+  gap: 10px;
+}
+
+.bottom_box_row5_col3 {
+  display: flex;
+  flex-direction: row;
+  border-radius: 2px;
+  background: #8bcae2;
+  padding: 4px;
+  gap: 10px;
+}
+
+.bottom_box_row5_text {
+  color: #fff;
+  font-size: clamp(0.0390625rem, 0rem + 0.625vw, 3.90625rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.gas_price_section_navigate {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  z-index: 401;
+  width: 21.02%;
+  height: 76.112%;
+  padding: 1rem;
+  border-radius: 4px;
+  background: #1d304e;
+  bottom: 10%;
+  margin-left: 1.88%;
+  gap: 1rem;
+}
+
+.gas_price_section_navigate.active {
+  display: flex;
+}
+
+.gas_price_section_navigate .navigate_top {
+  width: 100%;
+  height: 27.72%;
+  padding: 0%;
+  border-radius: 4px;
+  border: 0px;
+}
+
+.gas_price_section_navigate .navigate_icon {
+  display: flex;
+  width: 88.185654008439%;
+  height: 12.043795620438%;
+  gap: 1rem;
+}
+
+.gas_price_section_navigate .icon_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  width: 28.22966507177%;
+}
+
+.gas_price_section_navigate .icon_base {
+  position: relative;
+}
+
+.gas_price_section_navigate .icon_img {
+  position: absolute;
+}
+.gas_price_section_navigate .icon_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.0585625rem, 0rem + 0.9375vw, 5.859375rem);
+  color: #fff;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 10%;
+}
+.gas_price_section_navigate .middle_text {
+  color: #fff;
+  font-size: clamp(0.0683125rem, 0rem + 1.0938vw, 6.8359375rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.gas_price_section_navigate .bottom_container {
+  width: 100%;
+  overflow: auto;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.gas_price_section_navigate ::-webkit-scrollbar {
+  /* width: 2%; */
+  display: none;
+}
+.gas_price_section_navigate .bottom_text_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.gas_price_section_navigate .line1 {
+  z-index: 401;
+  width: 100%;
+  border: 0.1px solid #9f9f9f;
+  /* background: #9f9f9f; */
+}
+.gas_price_section_navigate .bottom_box_row1_header {
+  color: #fff;
+  font-size: clamp(0.0683125rem, 0rem + 1.0938vw, 6.8359375rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.gas_price_section_3 {
+  display: flex;
+  flex-direction: column;
+  z-index: 401;
+  position: absolute;
+  width: 48.9%;
+  height: 12.5%;
+  bottom: 10%;
+  margin-left: 24.1%;
+  border-radius: 0.25rem;
+  background: #e0d350;
+  padding-top: 1.175%;
+  padding-left: 1.88%;
+  padding-right: 2.5%;
+}
+
+.gas_price_section_3 .section_3_row1 {
+  width: 100%;
+}
+
+.gas_price_section_3 .section_3_row1_text {
+  color: #000;
+  font-family: "Area Extended";
+  letter-spacing: 1.5px;
+  font-size: clamp(0.09765625rem, 0rem + 1.5625vw, 9.765625rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.gas_price_section_3 .section_3_row2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gas_price_section_3 .section_3_row2_col1_img {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.gas_price_section_3 .section_3_row2_col1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.gas_price_section_3 .section_3_row2_col1_text {
+  color: #000;
+  font-family: Allotrope;
+  font-size: clamp(0.09765625rem, 0rem + 1.5625vw, 9.765625rem);
+  font-style: normal;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.gas_price_section_3 .section_3_row2_col2_text {
+  color: #000;
+  font-family: Area Normal;
+  font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer {
+  position: absolute;
+  z-index: 401;
+  width: 100%;
+  height: 9%;
+  bottom: 0px;
+}
+
+.top_footer {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #09101d, #1f3253 50%, #1d304e 50%);
+  /* background: linear-gradient(90deg, #09101D, #1D304E 0.67%,  #1D304E 104.09%); */
+  margin-left: 1.76%;
+  width: 96.25%;
+  height: 62.5%;
+  margin-top: 4px;
+  z-index: 2;
+  padding-right: 1.76%;
+  padding-left: 1.19%;
+}
+
+.top_footer_text {
+  color: #fdc100;
+  text-align: center;
+  font-size: clamp(0.09765625rem, 0rem + 1.5625vw, 9.765625rem);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.top_footer_img2 {
+  display: flex;
+  align-items: center;
+}
+
+.bottem_footer {
+  position: absolute;
+  margin-left: 8px;
+  width: 98.75%;
+  height: 67.1875%;
+  margin-top: 14px;
+  border-radius: 0.25rem;
+  z-index: 1;
+  opacity: 1;
+  border: 1px solid rgba(253, 193, 0, 0.4);
+}
+
+.footer_text_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 96.25%;
+  z-index: 2;
+  margin-left: 1.76%;
+  padding-right: 1.76%;
+  padding-left: 1.19%;
+  position: absolute;
+  bottom: 0px;
+}
+
+.footer_text_row_col1 {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.footer_text_row_col2 {
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer_text_row_col2_img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer_text_row_text {
+  color: #fff;
+  text-align: center;
+  font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.footer_text_row_text2 {
+  color: #fff;
+  text-align: center;
+  font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.mobile_view_footer {
+  display: none;
+}
+
+.card_view_text {
+  display: none;
+  z-index: 401;
+}
+
+.custom-tooltip {
+  background: rgba(255, 255, 255, 0.5);
+  /* Adjust alpha as needed for transparency */
+  border: none;
+}
+
+.custom-tooltip-content {
+  padding: 5px;
+  border-radius: 10px;
+  color: red;
+}

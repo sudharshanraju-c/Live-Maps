@@ -1,0 +1,167 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.unemployment_section1 {
+    width: 23.5%;
+    height: 34.8%;
+    position: absolute;
+    display: none;
+    top: 12.8%;
+    z-index: 401;
+    margin-left: 1.875%;
+    border-radius: 4px;
+    background: #FFF;
+}
+
+.unemployment_section1 .section1_image {
+    width: 100%;
+    height: 72%;
+    overflow: hidden;
+}
+
+.unemployment_section1 .section1_image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.unemployment_section1 .section1_text_box {
+    width: 100%;
+    height: 28%;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    color: #000;
+    font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: white;
+}
+
+.unemployment_section1 .section1_text2 {
+    margin-top: 2%;
+}
+
+.unemployment_section2 {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 401;
+    width: 23.68%;
+    height: 33%;
+    bottom: 10%;
+    margin-left: 1.875%;
+}
+
+.unemployment_section2 .top_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 29.50%;
+    padding: 1rem;
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(134, 134, 134, 0.25);
+}
+
+.unemployment_section2 .top_box1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.unemployment_section2 .circle_img {
+    display: flex;
+    align-items: center;
+}
+
+.unemployment_section2 .top_box1_text1 {
+    color: #0A0A0A;
+    font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-left: 2%;
+}
+
+.unemployment_section2 .top_box2_text1 {
+    color: #656565;
+    font-size: clamp(0.0683125rem, 0rem + 1.0938vw, 6.8359375rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.unemployment_section2 .bottom_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 62%;
+    padding: 1rem;
+    border-radius: 4px;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(134, 134, 134, 0.25);
+}
+
+.unemployment_section2 .bottom_box_text1 {
+    color: #0A0A0A;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+}
+
+.line {
+    width: 90%;
+    height: 0.5px;
+    background: #C1C1C1;
+
+}
+
+.bottom_box_lower_row {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.bottom_box_lower_row_child {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.bottom_box_lower_row_child2 {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+
+.bottom_box_lower_row_child3 {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: flex-start;
+
+}
+
+.bottom_box_text2 {
+    color: #212121;
+    font-size: clamp(0.078125rem, 0rem + 1.25vw, 7.8125rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 0.4rem;
+    justify-content: flex-start;
+}
+

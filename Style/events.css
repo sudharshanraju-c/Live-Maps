@@ -1,0 +1,225 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.events_section2 {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 401;
+    width: 24.3%;
+    height: 16.25%;
+    bottom: 10%;
+    margin-left: 1.875%;
+    border-radius: 4px;
+    background: #FFF;
+    background-blend-mode: overlay;
+    box-shadow: 0px -6px 24px 0px rgba(134, 134, 134, 0.25);
+}
+
+.events_section2 .section2_inner_box {
+    display: flex;
+    flex-direction: row;
+    width: 89.75%;
+    height: 72.65%;
+}
+
+.events_section2 .left_box {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 67%;
+    height: 100%;
+}
+
+.events_section2 .left_box_row1 {
+    width: 100%;
+    height: 28.25%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.events_section2 .text_margin {
+    margin-left: 2.139%;
+}
+
+.events_section2 .left_box_row2 {
+    height: 21.2%;
+}
+
+.events_section2 .left_box_row1_main_img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.events_section2 .left_box_row1_img1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.events_section2 .left_box_row1_img2 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.events_section2 .left_box_row1_text {
+    color: #0A0A0A;
+    font-size: clamp(0.0731875rem, 0rem + 1.1713vw, 7.320625rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+}
+
+.events_section2 .left_box_row2_text {
+    color: #858585;
+    font-size: clamp(0.064rem, -0.0001rem + 1.0248vw, 6.405rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.events_section2 .left_box_row3 {
+    display: flex;
+    flex-direction: row;
+    height: 18.82%;
+}
+
+.events_section2 .left_box_row3_text {
+    font-size: clamp(0.054875rem, 0rem + 0.8785vw, 5.4904375rem);
+    color: #A5A5A5;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.events_section2 .left_box_row4 {
+    height: 17.647%;
+}
+
+.events_section2 .right_box {
+    width: 32.98%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.events_section2 .right_box_col1 {
+    display: flex;
+    flex-direction: column;
+    width: 91.304%;
+    height: 78.823%;
+}
+
+.events_section2 .right_box_col1_text {
+    color: #0A0A0A;
+    font-size: clamp(0.054875rem, 0rem + 0.8785vw, 5.4904375rem);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.events_section2 .right_box_col1_dognut {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.events_section2 .progress-bar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, white 50%, transparent 10% 100%),
+        conic-gradient(#A1A4F9 60%, #D3D3D3 0);
+    transform: rotate(90deg);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.events_section2 .progressBar_text {
+    font-size: clamp(0.0585625rem, 0rem + 0.9375vw, 5.859375rem);
+    color: black;
+    transform: rotate(270deg);
+    position: absolute;
+    color: #0A0A0A;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.events_section2_compass {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 401;
+    bottom: 10%;
+    right: 1.76%;
+    width: 7.03%;
+    height: 13.1%;
+}
+
+.events_section2 .compass_top_box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.events_section2 .compass_bottom_box {
+    width: 100%;
+    height: 25.581%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.events_section2 .compass_bottom_box_text_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #000;
+    text-align: center;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.events_section2 .compass_bottom_box_line {
+    width: 100%;
+    height: 4px;
+    background-color: black;
+}
+
+.events_section2 .line {
+    width: 100%;
+    height: 0.5px;
+    background: #C1C1C1;
+
+}
