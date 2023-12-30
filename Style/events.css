@@ -17,7 +17,7 @@
     bottom: 10%;
     margin-left: 1.875%;
     border-radius: 4px;
-    background: #FFF;
+    background: #1D304E;
     background-blend-mode: overlay;
     box-shadow: 0px -6px 24px 0px rgba(134, 134, 134, 0.25);
 }
@@ -80,7 +80,7 @@
 }
 
 .events_section2 .left_box_row1_text {
-    color: #0A0A0A;
+    color: #fff;
     font-size: clamp(0.0731875rem, 0rem + 1.1713vw, 7.320625rem);
     font-style: normal;
     font-weight: 600;
@@ -89,7 +89,7 @@
 }
 
 .events_section2 .left_box_row2_text {
-    color: #858585;
+    color: #F1F1F1;
     font-size: clamp(0.064rem, -0.0001rem + 1.0248vw, 6.405rem);
     font-style: normal;
     font-weight: 400;
@@ -104,7 +104,7 @@
 
 .events_section2 .left_box_row3_text {
     font-size: clamp(0.054875rem, 0rem + 0.8785vw, 5.4904375rem);
-    color: #A5A5A5;
+    color: #BEBEBE;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -132,7 +132,7 @@
 }
 
 .events_section2 .right_box_col1_text {
-    color: #0A0A0A;
+    color: #fff;
     font-size: clamp(0.054875rem, 0rem + 0.8785vw, 5.4904375rem);
     font-style: normal;
     font-weight: 400;
